@@ -1,0 +1,558 @@
+#          __             _
+#  _ __   / /  ___   __ _(_)_ __
+# | '_ \ / /  / _ \ / _` | | '_ \
+# | | | / /__| (_) | (_| | | | | |
+# |_| |_\____/\___/ \__, |_|_| |_|
+#                   |___/
+
+# Sitio web: https://www.nickuc.com
+# Spigot: https://www.spigotmc.org/resources/nlogin.57272/
+# GamersBoard: https://gamersboard.com.br/topic/60312-nlogin-um-plugin-avan%C3%A7ado-de-autentica%C3%A7%C3%A3o/
+# Discord: https://www.nickuc.com/discord
+
+# Do not change this setting
+file-version: 3
+
+# Modo de depuração: É utilizado para correção de problemas no plugin.
+debug-mode: false
+
+# Ajustes relacionados con plugins.
+Plugin:
+  # Idioma del plugin: [mensagens.yml, mensajes.yml or messages.yml]
+  languageFile: 'mensajes.yml'
+
+# Ajustes relacionados con el sistema bungeecord.
+# Bungeecord: la función se activará automáticamente si activas 'bungeecord' en spigot.yml
+Bungeecord:
+  # Configuración de BungeeGuard: BungeeGuard es un sistema creado por lucko (https://github.com/lucko/BungeeGuard)
+  # nLogin sólo incorpora el uso de este plugin con una traducción PT-BR con el fin de prevenir ataques maliciosos.
+  bungeeguard:
+    # Uso de BungeeGuard: BungeeGuard es más eficiente que IPWhitelist, OnlyProxyJoin y demasiado.
+    use-bungeeguard: true
+
+    # Tokens permitidos: Cuáles serán los tokens permitidos por BungeeGuard?
+    # Para obtener más información, visite las instrucciones: https://github.com/NickUltracraft/nplugins-doc/wiki/nLogin-Bungee
+    allowed-tokens: []
+
+  # Conectar automáticamente en lobbies: esta función hará que un jugador se conecte automáticamente a un servidor de lobby al autenticar.
+  # Si no está utilizando bungeecord, esta función no se activará.
+  server-redirect:
+    # Habilitar la redirección entre servidores.
+    enabled: false
+
+    # Lista de servidor(es) a los que se conectarán los jugadores al iniciar sesión.
+    # Si introduce más de un servidor, el servidor conectado se elige aleatoriamente.
+    redirect-servers:
+      - 'lobby1'
+      - 'lobby2'
+
+    # Tiempo para esperar el cambio al lobby (20 tics equivalen a 1 segundo).
+    # No es posible ingresar un valor menor a 15 ticks (0.75s).
+    switch-delay: 15
+
+# Configuración relacionada con la base de datos.
+Database:
+  # Define el tipo de base de datos. Valores válidos: [SQLITE o MYSQL].
+  database-type: SQLITE
+
+  # Connection pooling: aumenta la velocidad de respuesta de la conexión en la base de datos remota.
+  # Debe deshabilitarse si utiliza la misma tabla nLogin para otra función.
+  connection-pooling: true
+
+  # Configuración de nomenclatura de columnas de plugin.
+  table:
+    # Nombre dado a la tabla principal de nLogin.
+    table-name: "nlogin"
+
+    # Nombre de las columnas nLogin. No cambie los datos a continuación si no sabe lo que está haciendo:
+    columns-name:
+      # Columna Ids
+      id: 'id'
+      # Coluna para los usuários
+      name: 'name'
+      # Columna para usuarios (nombre real)
+      realname: 'realname'
+      # Columna para contraseñas
+      password: 'password'
+      # Columna para pin
+      pin: 'pin'
+      # Columna para direcciones IP
+      address: 'address'
+      # Columna para la fecha de registro
+      regdate: 'regdate'
+      # Columna hasta la fecha del último inicio de sesión
+      lastlogin: 'lastlogin'
+      # Columna para guardar el correo electrónico
+      email: 'email'
+      # Columna para guardar Twitter
+      twitter: 'twitter'
+      # Columna para guardar discordi
+      discord: 'discord'
+      # Columna utilizada para la configuración del reproductor
+      settings: 'settings'
+
+  # Configuración de la base de datos.
+  SQLITE:
+    # Elija el nombre de la base de datos SQLITE aquí. No cambie esta información si no sabe lo que está haciendo.
+    database-filename: 'contas.db'
+
+  MYSQL:
+    # Ingrese la dirección IP de su MySQL aquí.
+    connection-address: 'localhost:3306'
+
+    # Ingrese aquí la base de datos que MySQL será utilizado.
+    connection-database: 'nLogin'
+
+    # Introduzca el usuario para la conexión MySQL aquí.
+    connection-user: 'root'
+
+    # Introduzca la contraseña para la autenticación MySQL aquí.
+    connection-password: ''
+
+    # MySQL advanced settings
+    advanced:
+      # Elija aquí la dirección para la conexión MySQL.
+      # El valor siguiente invalidará la configuración de dirección ip y de base de datos.
+      # No cambie esta información si no sabe lo que está haciendo.
+      connection-url: 'jdbc:mysql://localhost:3306/nLogin'
+
+# Configuración relacionada con los sistemas de seguridad.
+Security:
+  # Oculta los elementos antes de iniciar sesión, protegiendo contra errores.
+  inventory-hider-before-login: true
+
+  # Prohíbe a un usuario con la misma dirección IP registrarse muchas veces.
+  address-limiter: true
+
+  # Establece el número máximo de iniciode sesión/registros por dirección IP.
+  address-limiter-counter: 2
+
+  # Esta característica se esconde de otros jugadores, aquellos que aún no se han autenticado completamente.
+  # Esta función evita errores antes de iniciar sesión y evita el spam de bots.
+  hide-players-before-login: true
+
+  # Esta característica bloquea el movimiento antes de iniciar sesión.
+  # Al deshabilitar la función siguiente, puede moverse antes de sesión / se registre.
+  block-player-walk: true
+
+  # Esta característica corrige y evita el error de spoof de uuids.
+  uuid-anti-spoof: true
+
+  # Cantidad de tiempo para que un jugador inicie sesión/se registre (establecido en segundos).
+  time-to-login: 45
+
+  # Este es el número máximo de intentos que un jugador puede hacer para autenticarse.
+  # Si usas el valor 1, el jugador será expulsado inmediatamente.
+  max-login-tries: 2
+
+  # Advierte al usuario si hay contraseñas no seguras en su cuenta.
+  warn-bad-passwords: false
+
+  # Información de detección de contraseña débil:
+  # Introduzca el valor '1' para marcar contraseñas débiles sin letras [abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]
+  # Introduzca el valor '2' para marcar contraseñas débiles sin números [0123456789]
+  # Introduzca el valor '3' para marcar contraseñas débiles sin símbolos [!@#$%&*()-_]
+  warn-bad-passwords-level: '123'
+
+  # Desactiva los comandos nLogin de alto riesgo en el juego.
+  # Esto ayuda a evitar problemas con la hacking.
+  disable-high-risk-commands: true
+
+  # Protección contra el acceso de clientes prohibidos.
+  clientsBlock:
+    # Quieres bloquear clientes que acceden con 5zig?
+    5zig: false
+
+    # Quieres bloquear clientes que acceden con mejor impresión?
+    bettersprinting: false
+
+    # Quieres bloquear a los clientes que acceden con forge?
+    forge: false
+
+    # Quieres bloquear a los clientes que acceden con liteloader?
+    liteloader: false
+
+    # Quieres bloquear a los clientes que acceden con schematica?
+    schematica: false
+
+    # Quieres bloquear a los clientes que acceden con wdl (WorldDownloader) ?
+    wdl: false
+
+  # Protección realizada através de comportamientos o acciones de los jugadores.
+  behavior:
+    # Esta función evita los ataques de robo de cuentas.
+    # Después de varios intentos de inicio de sesión, la dirección IP sospechosa será bloqueada.
+    punish-many-wrong-password-tries: true
+
+    # Establezca aquí la hora a la que desea que se bloquee la dirección IP (establecida en minutos).
+    punish-duration-minutes: 15
+
+  password:
+    # Defina aquí qué tipo de algoritmo hash nLogin usará.
+    # Valores válidos [SHA256, SHA512, MD5].
+    hash-algorithm: 'SHA256'
+
+    # Tamaño de las contraseñas pequeñas.
+    small: 5
+
+    # Tamaño de las contraseñas grandes.
+    large: 15
+
+  pin:
+    # Seguridad del pin: es el sistema utilizado para la recuperación de la cuenta.
+    enable-pin: true
+
+    # Envía una alerta a los usuarios sin pin registrado.
+    warn-players: false
+
+    # Indique aquí el tamaño del pasador que se generará.
+    # Consejo: No introduzca números demasiado grandes para que sea más fácil recordar el pasador.
+    pin-lenght: 6
+
+# Ajustes relacionados con las características del plugin.
+Resources:
+  # Esta función le permite ver mensajes en la pantalla.
+  use-title-bar: true
+
+  # Esta característica añade barras de acción al servidor.
+  use-action-bar: true
+
+  # Esta función borrará el chat cuando inicie sesión en el servidor.
+  clean-chat-on-join: true
+
+  # Esta característica eliminará el mensaje de entrada del minecraft.
+  remove-join-message: true
+
+  # Esta característica bloqueará el comando /execute
+  disable-execute-command: true
+
+  # Añade sonidos de Minecraft a las funciones nLogin.
+  use-sounds: true
+
+  # Contador de tiempo restante: el contador aparece en forma de barra de acciones (establecido en segundos).
+  actionbar-counter: true
+
+  # Expulsa a todos los jugadores que están en línea después de una recarga en el plugin. ( previene errores )
+  kick-on-reload: false
+
+  # ChatComponent: Esta característica le permite ver mensajes interactivos con el cliente.
+  # Varias características se basan en BaseComponent. Desactivar esta función puede afectar a otros mensajes y configuraciones.
+  use-chat-component: true
+
+  # SafeTeleport: Teletransporta al reproductor a un lugar seguro.
+  # Se puede activar en caso de problemas del jugador 'bugar' en un bloque.
+  teleport-safe-location: false
+
+  # Teletransporta al jugador a la última ubicación al cerrar sesión.
+  teleport-last-location: true
+
+  # Teletransporta al jugador al punto de generación después de su muerte.
+  teleport-on-death: true
+
+  # Características del plugin de pago
+  premium:
+    # Esta característica hace que los usuarios que usan minecraft original no necesiten autenticarse.
+    # Se recomienda activar, pero en caso de problemas de conexión con Mojang, puede evitar el inicio de sesión del jugador.
+    auto-premium-login: false
+
+    # El sistema de sesión facilita la entrada al servidor, registrando automáticamente a un usuario con la misma dirección IP registrada.
+    session: true
+
+    # Establezca si el sistema de sesión solo funcionará si inicia sesión en X minutos después del último inicio de sesión.
+    # Para desactivar el tiempo entre una sesión y otra, introduzca el valor 0.
+    session-duration: 5
+
+  # Características avanzadas del plugin.
+  advanced:
+    # Authme Fake permite que los plugins que funcionan con AuthMe funcionen perfectamente con nLogin.
+    enable-authme-api: false
+
+    # Esta función permite una divulgación automática del servidor en Twitter: '@NickUCSystem'.
+    allow-auto-twitter-share: true
+
+    # Tiempo máximo para preservar un caché de cuenta (en segundos).
+    # Si se acabó el tiempo, nLogin obtendrá la información directamente de la base de datos.
+    max-account-cache-gentime: 60
+
+    # Nombres sin restricciones: esta característica hace que los nicks de abajo no tengan que autenticarse.
+    # ADVERTENCIA: Utilice esta función bajo su propio riesgo.
+    unrestricted-names: []
+
+    # Recursos relacionados con el cliente (jugador).
+    client:
+      # Adapta el idioma de nLogin según el cliente de la persona que está accediendo.
+      # Si desactiva esta función, el idioma que envíe dependerá del configurado aquí.
+      language-by-client: false
+
+      # Oculta y restaura la información del jugador (como velocidad, modo de vuelo, vida, hambre, etc.)
+      # Se recomienda deshabilitar en los servidores del lobby
+      restore-player-stats: true
+
+      # Tiempo para que se oculte la información del jugador.
+      # Este valor debe hacerse en ticks (20 ticks equivalen a 1 segundo).
+      # No es posible deshabilitar el retraso, ya que se pueden causar errores.
+      restore-player-stats-delay: 7
+
+      # Quieres permitir que nLogin anuncie otros nuevos plugins NickUC?
+      advertising: true
+
+      # Ingrese aquí la lista de comandos permitidos que se utilizarán antes de cualquier tipo de autenticación
+      # Para cambiar el tipo de comando permitido, coloque el comando bared en la lista siguiente.
+      allowed-commands-before-login:
+        - "/loginstaff"
+
+    # Características relacionadas con la optimización de plugins.
+    optimizer:
+      # Esta función deshabilita algunas funciones sobrescribiendo una función ya activada.
+      # Se activa en servidores con menos de 1 GB de RAM o con la función 'ForcarOtimizador' activada.
+      use-plugin-optimizer: true
+
+      # Esta característica hace que la optimización se realice en servidores con más de 1 GB.
+      force-plugin-optimizer: false
+
+      # Pone métodos que son pesados en ASYNC, para reducir el uso del tick del plugin.
+      # No cambies el valor a continuación si no sabes lo que estás haciendo.
+      optimize-in-async: true
+
+  # Lista de comandos do nLogin
+  commands:
+    discord:
+      enabled: true
+      commands: [discord]
+      description: Comando para a confirmacao da senha temporaria.
+    dupeip:
+      enabled: true
+      commands: [dupeip]
+      description: Comando para verificar ips.
+    email:
+      enabled: true
+      commands: [email]
+      description: Comando para a confirmacao de senha temporaria.
+    login:
+      enabled: true
+      commands: [login,logar]
+      description: Comando para logar no servidor.
+    changepassword:
+      enabled: true
+      commands: [changepassword,changepass,mudarsenha,trocarsenha]
+      description: Comando para trocar a senha no servidor.
+    pin:
+      enabled: true
+      commands: [pin]
+      description: Comando para recuperação da conta.
+    register:
+      enabled: true
+      commands: [register,registrar]
+      description: Comando para registrar no servidor.
+    twitter:
+      enabled: true
+      commands: [twitter]
+      description: Comando para a confirmacao da senha temporaria.
+    unregister:
+      enabled: false
+      commands: [unregister,desregistrar]
+      description: Comando para desregistrar.
+    checkprofile:
+      enabled: true
+      commands: [checkprofile,verificar]
+      description: Comando para verificar dados do jogador.
+
+# Configuración de dos factores relacionada con el sistema de Twitter.
+Twitter:
+  # Utilice el sistema de dos factores de Twitter.
+  twofactor-twitter: false
+
+  # ¿Desea alertar a los usuarios para que activen la protección?
+  warn-players: true
+
+  # Elige aquí cuál será el método para conectarte a Twitter.
+  # Valores válidos [xauth, oauth, oauth2].
+  connection-type: oauth2
+
+  ######################################
+  ##########  Método XAuth   ###########
+  ######################################
+  xauth:
+    # Escriba el usuario del método XAuth.
+    username: ""
+
+    # Introduzca la contraseña del método xauth.
+    password: ""
+
+  ######################################
+  ##########   Método OAuth   ##########
+  ######################################
+  oauth:
+    # Escriba la clave de consumidor del método OAuth.
+    consumer-key: ""
+
+    # Escriba la clave de consumidor (secreta) del método OAuth.
+    consumer-key-secret: ""
+
+    # Escriba el token de acceso del método OAuth.
+    access-token: ""
+
+    # Escriba el token de acceso (secreto) del método OAuth.
+    access-token-secret: ""
+
+  ######################################
+  #########   Método OAuth 2   #########
+  ######################################
+  oauth2:
+    # Escriba el token de acceso para el método OAuth 2.
+    access-token: ""
+
+  # Mensaje enviado cuando un usuario se une en Twitter.
+  confirm-message:
+    - "El sistema nLogin generó una contraseña temporal para la cuenta %usuario%."
+    - ""
+    - "Para autenticarse, utilice el '/twitter %senha%'."
+
+  # Mensaje enviado cuando un usuario inicia sesión desde una dirección IP diferente.
+  confirm-message2:
+    - "El sistema nLogin generó una contraseña de confirmación para la cuenta %usuario%."
+    - ""
+    - "Para autenticarse, utilice el '/twitter %senha%'."
+
+  # Mensaje enviado cuando se detecta un atacante potencial.
+  suspect-access-message:
+    - "El sistema nLogin ha detectado actividad sospechosa en su cuenta %usuario%."
+    - ""
+    - " Información de acceso:"
+    - " Fecha del juicio: %data% às %hora%"
+    - " Dirección IP: %ip%"
+    - ""
+    - "La dirección IP de esta cuenta ha sido temporalmente prohibida bajo sospecha de hacking."
+
+  # Mensaje enviado a los usuarios para habilitar la seguridad por Parte de Twitter.
+  warn-message:
+    - ""
+    - "  &aSistema de seguridad de Twitter"
+    - "  &aUtilice el comando &f'/twitter associar <seu twitter>' &apara mejorar su seguridad."
+    - "  &aCon Twitter, evitas hackear tu cuenta."
+    - ""
+
+  # Mensaje enviado a un usuario que inicia sesión con una dirección IP diferente.
+  warn-change-address:
+    - ''
+    - ' &aLo sentimos, pero se requiere confirmación de identidad.'
+    - ' &aSe ha enviado un código de seguridad a tu Twitter registrado.'
+    - ' &aUtilice el comando /twitter <código enviado> para autenticar.'
+    - ' &aSi pierde su contraseña o la mueve, se generará un nuevo código.'
+    - ''
+    - ' &7Recuerde estar siguiendo &f%twitter_sv% &7no twitter.'
+    - ''
+
+# Configuración de dos factores relacionada con el sistema por correo electrónico.
+Email:
+  # Utilice el sistema de dos factores por correo electrónico.
+  twofactor-email: false
+
+  # ¿Desea alertar a los usuarios para que activen la protección?
+  warn-players: true
+
+  # Configuración de conexión de correo electrónico.
+  connection:
+    # Introduzca el correo electrónico para la conexión.
+    email: 'servidorteste@gmail.com'
+    # Introduzca la contraseña para la conexión.
+    password: '123456'
+    # Ingresa tu correo electrónico smtp (No cambies si usas Gmail)
+    smtpHost: 'smtp.gmail.com'
+    # Introduzca el puerto smtp de correo electrónico (No cambie si está utilizando Gmail)
+    smtpPort: '587'
+
+  # Mensaje enviado cuando un usuario se une al correo electrónico.
+  confirm-message:
+    - "El sistema nLogin generó una contraseña temporal para la cuenta %usuario%."
+    - ""
+    - "Para autenticarse, utilice el '/email %senha%'."
+
+  # Mensaje enviado cuando un usuario inicia sesión desde una dirección IP diferente.
+  confirm-message2:
+    - "El sistema nLogin generó una contraseña de confirmación para la cuenta %usuario%."
+    - ""
+    - "Para autenticarse, utilice el '/email %senha%'."
+
+  # Mensaje enviado cuando se detecta un atacante potencial.
+  suspect-access-message:
+    - "El sistema nLogin ha detectado actividad sospechosa en su cuenta %usuario%."
+    - ""
+    - " Información de acceso:"
+    - " Fecha del juicio: %data% às %hora%"
+    - " Dirección IP: %ip%"
+    - ""
+    - "La dirección IP de esta cuenta ha sido temporalmente prohibida bajo sospecha de hacking."
+
+  # Mensaje enviado a los usuarios para habilitar la seguridad por Twitter
+  warn-message:
+    - ""
+    - "  &aSistema de seguridad por correo electrónico"
+    - "  &aUtilice el comando &f'/email associar <seu email>' &apara mejorar su seguridad."
+    - "  &aCon El correo electrónico, evitas hackear tu cuenta."
+    - ""
+
+  # Mensaje enviado a un usuario que inicia sesión con una dirección IP diferente.
+  warn-change-address:
+    - ''
+    - ' &aLo sentimos, pero se requiere confirmación de identidad.'
+    - ' &aSe ha enviado un código de seguridad a su correo electrónico registrado.'
+    - ' &aUtilice el comando /email <código enviado> para autenticar.'
+    - ' &aSi pierde su contraseña o la mueve, se generará un nuevo código.'
+    - ''
+
+# Configuración de dos factores relacionada con el sistema de Discord.
+Discord:
+  # Utilice el sistema de dos factores de Discord.
+  twofactor-discord: false
+
+  # Desea alertar a los usuarios para que activen la protección?
+  warn-players: true
+
+  # Pon tu ficha aquí desde tu bot.
+  # Crear una aplicación en (https://discordapp.com/developers/applications/), activar el bot e introducir su token.
+  bot-token: ""
+
+  # Ponga aquí el enlace para invitar desde su servidor
+  # Esto será necesario para completar una autenticación.
+  link-discord: "tuinvite"
+
+  # Descripción del mensaje enviado cuando un usuario se une a discord.
+  confirm-message-description: "El sistema nLogin generó una contraseña de confirmación para la cuenta %usuario%."
+
+  # Mensaje enviado cuando un usuario se une a discord.
+  confirm-message:
+    - "Comando -> Para autenticar, utilice el comando '/discord %senha%'."
+
+  # Descripción del mensaje enviado cuando un usuario cierra sesión en una dirección IP diferente.
+  confirm-message2-description: "El sistema nLogin generó una contraseña de confirmación para la cuenta %usuario%."
+
+  # Mensaje enviado cuando un usuario inicia sesión desde una dirección IP diferente.
+  confirm-message2:
+    - "Comando -> Para autenticarse, utilice el '/discord %senha%'."
+
+  # Descripción del mensaje enviado cuando un usuario se une a discordia.
+  suspect-access-message-description: "Se ha detectado un inicio de sesión sospechoso en la cuenta %usuario%."
+
+  # Mensaje enviado cuando se detecta un atacante potencial.
+  suspect-access-message:
+    - "Información de acceso->Fecha de prueba: %data% às %hora%"
+    - "Acceso a la dirección IP de acceso: %ip%"
+    - "El posible atacante ha sido prohibidoo->La dirección IP de esta cuenta ha sido temporalmente prohibida bajo sospecha de piratería."
+
+  # Mensaje enviado a los usuarios para habilitar la seguridad por Discord
+  warn-message:
+    - ""
+    - "  &aSistema de seguridad de discord"
+    - "  &aUtilice el comando &f'/discord associar' &ay siga los pasos."
+    - "  &aCon Discord, evitas hackear tu cuenta."
+    - ""
+
+  # Mensaje enviado a un usuario que inicia sesión con una dirección IP diferente.
+  warn-change-address:
+    - ''
+    - ' &aLo siento, pero se requiere confirmación de identidad.'
+    - ' &aSe ha enviado un código de seguridad a su discordia registrada.'
+    - ' &aUtilice el comando /discord <código enviado> para autenticar.'
+    - ' &aSi pierde su contraseña o la mueve, se generará un nuevo código.'
+    - ''

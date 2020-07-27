@@ -1,0 +1,49 @@
+[27 de Julho de 2020 11:27:43]: [nLogin]          __             _       
+[27 de Julho de 2020 11:27:43]: [nLogin]  _ __   / /  ___   __ _(_)_ __  
+[27 de Julho de 2020 11:27:43]: [nLogin] | '_ \ / /  / _ \ / _` | | '_ \ 
+[27 de Julho de 2020 11:27:43]: [nLogin] | | | / /__| (_) | (_| | | | | |
+[27 de Julho de 2020 11:27:43]: [nLogin] |_| |_\____/\___/ \__, |_|_| |_|
+[27 de Julho de 2020 11:27:43]: [nLogin]                   |___/            
+[27 de Julho de 2020 11:27:43]: [nLogin]  By: www.nickuc.com - V 8.4.0 Release Build
+[27 de Julho de 2020 11:27:43]: [nLogin] 
+[27 de Julho de 2020 11:27:43]: [nLogin] nLogin Lite foi ativado com sucesso. Alguns recursos podem ser desativados para melhorar a performance.
+[27 de Julho de 2020 11:27:43]: [nLogin] Carregando tarefas para inicialização...
+[27 de Julho de 2020 11:27:43]: [nLogin] nLogin foi carregado em 486ms.
+[27 de Julho de 2020 11:27:57]: [nLogin] 
+[27 de Julho de 2020 11:27:57]: [nLogin]  Obrigado por escolher o nLogin! <3
+[27 de Julho de 2020 11:27:57]: [nLogin] 
+[27 de Julho de 2020 11:27:57]: [nLogin]  Para sua segurança, leia a mensagem abaixo:
+[27 de Julho de 2020 11:27:57]: [nLogin]   Nunca baixe o nLogin de fontes desconhecidas.
+[27 de Julho de 2020 11:27:57]: [nLogin]   Uma versão modificada pode conter softwares maliciosos.
+[27 de Julho de 2020 11:27:57]: [nLogin] 
+[27 de Julho de 2020 11:27:57]: [nLogin]  Sites oficiais:
+[27 de Julho de 2020 11:27:57]: [nLogin]   www.nickuc.com
+[27 de Julho de 2020 11:27:57]: [nLogin]   www.spigotmc.org/resources/pt-br-nlogin.57272/
+[27 de Julho de 2020 11:27:57]: [nLogin]   https://github.com/NickUltracraft
+[27 de Julho de 2020 11:27:57]: [nLogin] 
+[27 de Julho de 2020 11:27:57]: [nLogin]  Canais oficiais para suporte:
+[27 de Julho de 2020 11:27:57]: [nLogin]   Grupo do Discord: www.nickuc.com/discord
+[27 de Julho de 2020 11:27:57]: [nLogin]   Discord: NickUC#4550
+[27 de Julho de 2020 11:27:57]: [nLogin]   E-mail: nickultracraft@gmail.com
+[27 de Julho de 2020 11:27:57]: [nLogin]   YouTube: youtube.com/c/nickultracraft
+[27 de Julho de 2020 11:27:57]: [nLogin]   Spigot: www.spigotmc.org/members/nickultracraft.563552
+[27 de Julho de 2020 11:27:57]: [nLogin] 
+[27 de Julho de 2020 11:28:33]: [nLogin] 
+[27 de Julho de 2020 11:28:33]: [nLogin] Desativando módulos do nLogin V 8.4.0...
+[27 de Julho de 2020 11:28:33]: [nLogin] 
+[27 de Julho de 2020 11:28:33]: [nLogin] nLogin foi encerrado em 18ms.
+[27 de Julho de 2020 11:29:50]: [nLogin]          __             _       
+[27 de Julho de 2020 11:29:50]: [nLogin]  _ __   / /  ___   __ _(_)_ __  
+[27 de Julho de 2020 11:29:50]: [nLogin] | '_ \ / /  / _ \ / _` | | '_ \ 
+[27 de Julho de 2020 11:29:50]: [nLogin] | | | / /__| (_) | (_| | | | | |
+[27 de Julho de 2020 11:29:50]: [nLogin] |_| |_\____/\___/ \__, |_|_| |_|
+[27 de Julho de 2020 11:29:50]: [nLogin]                   |___/            
+[27 de Julho de 2020 11:29:50]: [nLogin]  By: www.nickuc.com - V 8.4.0 Release Build
+[27 de Julho de 2020 11:29:50]: [nLogin] 
+[27 de Julho de 2020 11:29:51]: [nLogin] nLogin Lite has been successfully activated. Some features may be disabled to improve performance.
+[27 de Julho de 2020 11:29:51]: [nLogin] Performing inicialization tasks...
+[27 de Julho de 2020 11:29:51]: [nLogin] nLogin was loaded in 705ms.
+[27 de Julho de 2020 11:31:05]: [nLogin] 
+[27 de Julho de 2020 11:31:05]: [nLogin] Unloading resources from nLogin V 8.4.0...
+[27 de Julho de 2020 11:31:05]: [nLogin] 
+[27 de Julho de 2020 11:31:05]: [nLogin] nLogin was unloaded in 8ms.

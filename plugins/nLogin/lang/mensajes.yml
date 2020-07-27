@@ -1,0 +1,286 @@
+#          __             _
+#  _ __   / /  ___   __ _(_)_ __
+# | '_ \ / /  / _ \ / _` | | '_ \
+# | | | / /__| (_) | (_| | | | | |
+# |_| |_\____/\___/ \__, |_|_| |_|
+#                   |___/
+
+# Site oficial: https://www.nickuc.com
+# Spigot: https://www.spigotmc.org/resources/nlogin.57272/
+# GamersBoard: https://gamersboard.com.br/topic/60312-nlogin-um-plugin-avan%C3%A7ado-de-autentica%C3%A7%C3%A3o/
+# Discord: https://www.nickuc.com/discord
+
+Messages:
+  # Title messages setting
+  Title:
+    # Mensagem enviada antes de logar
+    before-login:
+      title: "&a&lBienvenido!"
+      subtitle: "&7Usa: /login contraseña."
+      delays:
+        start: 0
+        duration: 9999
+        end: 6
+    # Mensagem enviada antes de registrar
+    before-register:
+      title: "&a&lBienvenido!"
+      subtitle: "&7Usa: /register contraseña contraseña."
+      delays:
+        start: 0
+        duration: 9999
+        end: 6
+    # Mensagem enviada após logar
+    after-login:
+      title: ""
+      subtitle: "&aHas inicio sesión con éxito!"
+      delays:
+        start: 0
+        duration: 30
+        end: 6
+    # Mensagem enviada após registrar
+    after-register:
+      title: ""
+      subtitle: "&aTe has registrado con éxito!"
+      delays:
+        start: 0
+        duration: 30
+        end: 6
+    # Mensagem enviada ao errar uma senha
+    incorrect-password:
+      title: ""
+      subtitle: "&cContraseña incorrecta!"
+      delays:
+        start: 0
+        duration: 30
+        end: 6
+    # Mensagem enviada quando já está logado
+    already-login:
+      title: ""
+      subtitle: "&cYa estás conectado!"
+      delays:
+        start: 0
+        duration: 30
+        end: 6
+    # Mensagem enviada quando já está registrado
+    already-registered:
+      title: ""
+      subtitle: "&cYa estás registrado!"
+      delays:
+        start: 0
+        duration: 30
+        end: 6
+    # Mensagem enviada quando as senhas não são iguais
+    passwords-dont-match:
+      title: ""
+      subtitle: "&cLas contraseñas no son iguales!"
+      delays:
+        start: 0
+        duration: 30
+        end: 6
+    # Mensagem enviada quando a sessão é continuada
+    session-login:
+      title: ""
+      subtitle: "&eSe ha continuado su inicio de sesión."
+      delays:
+        start: 0
+        duration: 30
+        end: 6
+    # Mensagem enviada quando você é um jogador original
+    premium-login:
+      title: ""
+      subtitle: "&eSu cuenta es original, ha iniciado sesión correctamente."
+      delays:
+        start: 0
+        duration: 30
+        end: 6
+    # Mensagem enviada quando você é um jogador original
+    plugin-reload:
+      title: ""
+      subtitle: "&aLos archivos de configuración y de lenguaje se han recargado."
+      delays:
+        start: 0
+        duration: 30
+        end: 6
+    # Mensagem enviada do sistema de backup
+    backup:
+      title: ""
+      subtitle: "&aCopia de seguridad realizada con éxito."
+      delays:
+        start: 0
+        duration: 30
+        end: 6
+    # Mensagem enviada do sistema de backup
+    backup-error:
+      title: ""
+      subtitle: "&cNo se puede realizar la copia de seguridad."
+      delays:
+        start: 0
+        duration: 30
+        end: 6
+    # Mensagem enviada do sistema de segurança
+    security-warning:
+      title: ""
+      subtitle: "&cSe ha enviado una nueva alerta de seguridad en el chat."
+      delays:
+        start: 0
+        duration: 60
+        end: 6
+
+  delay-kick:
+    # Mensagem enviada quando um usuário demora muito para se registrar
+    register-kick: "&cTe has tardado mucho en registrarte."
+    # Mensagem enviada quando um usuário demora muito para se logar
+    login-kick: "&cTe has tardado mucho en iniciar sesión."
+
+  successful-operations:
+    # Mensagem quando um usuário troca a sua senha [Variável %senha% disponível]
+    password-changed: "&aSu contraseña ha cambiado con éxito."
+    # Mensagem enviada quando um usuário loga com sucesso
+    successful-login: "&aTe has logueado con éxito."
+    # Mensagem enviada quando um usuário loga com uma conta original
+    successful-premium-login: "&aUsted inicia sesión automáticamente ya que está utilizando una cuenta original."
+    # Mensagem enviada quando um usuário loga com uma conta original
+    successful-session-login: "&aSu sesión de inicio de sesión ha sido resumida."
+    # Mensagem enviada quando um usuário se registra com sucesso
+    successful-register: "&aTe has registrado con éxito."
+    # Mensagem enviada quando você força o login de um jogador (Console)
+    forcelogin: "&eForzaste el inicio de sesión del jugador %jogador%"
+    # Mensagem enviada quando um jogador se desregistra com sucesso
+    unregister-kick: "&cTe desregistraste con éxito."
+
+  kick-messages:
+    # Mensagem quando um jogador tenta se logar no servidor com uma pequena diferença no nick
+    nick-already-registered: "&cNo podés entrar con el nick %nickatual%&r\n&r&cEste nick ya ha sido registrado como %nickregistrado%&r\n&r&r\n&r&cPara entrar, debes ingresar tu nick sin letras mayúsculas/minúsculas"
+    # Mensagem enviada quando um usuário erra muitas vezes
+    failed-many-times: "&cLa contraseña ingresada es incorrecta."
+    # Mensagem enviada quando a senha inserida é incorreta
+    incorrect-password: "&cContraseña incorrecta! Vuelve a intentarlo."
+    # Mensagem enviada quando o usuário possui um UIDD inválido
+    invalid-uuid: "&cSu UUID no es válido. Intente reiniciar el cliente."
+    # Mensagem enviada quando o servidor ainda está sendo iniciado.
+    wait-server-start: "&cEl servidor aún no se ha iniciado por completo.&r\n&r§cEspere un momento para conectarse."
+    # Mensagem enviada quando um IP é bloqueado por suspeita de invasão
+    account-blocked: "&cSu dirección IP ha sido bloqueada por presunta invasión.&r\n&r&cTiempo de destierro restante: %tempo%"
+    # Mensagem enviada quando a senha temporária do sistema de dois fatores está incorreta.
+    incorrect-temporary-password: "&cLa contraseña introducida es incorrecta. Vuelve a intentarlo."
+    # Mensagem para kickar um usuário com um nick inválido. Exemplos: (Teste^^?)
+    invalid-nickname: "&cTu apodo no es válido."
+
+  security-messages:
+    # Mensagem enviada quando um usuário foi protegido pelo sistema de heurísticas
+    hacking-attack-warning:
+      - ""
+      - " &c&lALERTA DE SEGURIDAD"
+      - " &cEl sistema de seguridad ha bloqueado un posible ataque de piratería en su cuenta."
+      - " &cSe realizaron tres intentos de inicio de sesión fallidos."
+      - ""
+      - " &e&lPropina: &eUtilice siempre contraseñas diferentes de otros servidores."
+    # Mensagem enviada quando um usuário foi protegido mais de uma vez pelo sistema de heurísticas
+    hacking-attack-warning2:
+      - ""
+      - " &c&lALERTA DE SEGURIDAD"
+      - " &cEl sistema de seguridad ha bloqueado %ataques% Posibles ataques de piratería en tu cuenta."
+      - " &cForam realizadas três tentativas de login sem êxito."
+      - ""
+      - " &e&lPropina: &eUtilice siempre contraseñas diferentes de otros servidores."
+    # Mensagem enviada quando um usuário utiliza uma senha fraca
+    weak-password:
+      - ""
+      - " &cLa contraseña registrada se considera no segura."
+      - " &cUtilice letras, números y símbolos para mejorar la seguridad."
+      - " &cEjemplo de contraseña: %senha%"
+      - ""
+
+  error-messages:
+    # Mensagem enviada quando um usuário/você já está logado
+    already-login: "&c%jogador% ya ha iniciado sesión."
+    # Mensagem enviada quando um usuário/você já está registrado
+    already-registered: "&c%jogador% ya está registrado."
+    # Mensagem enviada quando um usuário/você não está registrado.
+    not-registered: "&c%jogador% no está registrado."
+    # Mensagem enviada quando a senha inserida não é igual a segunda
+    passwords-dont-match: "&cLas contraseñas no son las mismas."
+    # Mensagem enviada quando um jogador não confirma sua senha
+    need-password-confirmation: "&cDebe confirmar su contraseña."
+    # Mensagem enviada quando um usuário/você não possui a senha temporária do Twitter
+    no-temporary-password: "&c%jogador% Todavía no tiene una contraseña temporal."
+    # Mensagem enviada quando os limites de ip por jogador passam do limite
+    address-limiter-warning: "&cHa agotado los límites de la cuenta sobre la propiedad intelectual."
+    # Mensagem enviada quando um jogador tenta mudar senha inserindo a mesma senha que a atual
+    password-same-as-old: "&cLa contraseña introducida es la misma que la actual."
+    # Mensagem enviada quando a senha inserida é muito grande
+    password-too-large: "&cLa contraseña introducida es muy grande."
+    # Mensagem enviada quando a senha inserida é muito pequena
+    password-too-small: "&cLa contraseña introducida es muy pequeña."
+    # Mensagem enviada quando um usuário tenta desativar o nLogin usando PlugMan
+    plugman-block: "&cNo puede tocar el plugin de inicio de sesión aquí."
+    # Mensagem quando um jogador não possuí a permissão necessária
+    insufficient-permissions: "&cNo tiene permiso para ejecutar este comando."
+    # Mensagem para mostrar o uso de um comando
+    command-usage: "&cUsted debe usar %uso%."
+    # Mensagem para kickar um jogador já online
+    already-online: "&cEste reproductor ya está en línea."
+    # Mensagem para exibir que um jogador não está online
+    offline-error: "&cEl reproductor deseado está desconectado."
+    # Mensagem para mostrar que o comando não pode ser executado via console
+    player-command-usage: "&cEste comando se ha inhabilitado a través de la consola."
+    # Mensagem para mostrar que um comando só pode ser executado pelo console
+    console-command-usage: "&cEste comando solo se puede utilizar a través de la consola."
+    # Mensagem mostrada quando o plugin é recarregado
+    plugin-reload-message: "&eEl plugin se ha recargado con éxito."
+    # Mensagem mostrada quando a função de um comando está desativada
+    command-function-disabled: "&cLa función del comando %comando% está discapacitado."
+    # Mensagem enviada quando um reload acontece no servidor e a função está ativada na config.yml
+    reload-kick-message: "&cSe ha producido una recarga en el servidor.&r\n&r&cVuelva a entrar."
+    # Mensagem enviada quando você utiliza um comando e outro é sugestionado para você
+    command-usage-mean: "&cQuieres decir %comando%"
+    # Mensagem enviada após recuperação do pin
+    changepassword-logged: "/mudarsenha <Nueva contraseña > Desde que ha iniciado sesión"
+
+  other-messages:
+    # Mensagem enviada ao passar o mouse
+    hover-message-login: "&7Haga clic aquí para completar el comando e iniciar sesión rápidamente."
+    # Mensagem enviada ao passar o mouse
+    hover-message-register: "&7Haga clic aquí para completar el comando y registrarse rápidamente."
+    # Mensagem enviada ao passar o mouse
+    hover-message-changepassword: "&7Haga clic aquí para completar el comando y cambiar la contraseña rápidamente."
+    # Mensagem enviada ao passar o mouse
+    hover-message-verify: "&7Haga clic aquí para completar el comando y comprobar el jugador rápidamente."
+    # Mensagem enviada para o uso do comando /logar
+    message-login: "&eUtilice el comando /login <contraseña>"
+    # Mensagem enviada para o uso do comando /register
+    message-register: "&eUtilice el comando /register <contraseña> <contraseña>"
+    # Mensagem enviada para o uso do comando /mudarsenha
+    message-changepassword: "&eUtilice el comando /changepassword <contraseña actual> <nueva contraseña>"
+    # Mensagem enviada para o uso do comando /verificar
+    message-verify: "&eUtilice el comando /checkprofile <jugador>"
+    # Termos que são substituidos em outras mensagens
+    elements:
+      password: 'contrasẽna'
+      password2: 'Contrasẽna'
+      newpassword: 'nueva contrasẽna'
+      you: 'Tu'
+      player: 'jugador'
+
+  pin:
+    # Mensagem enviada quando o pin inserido é inválido
+    incorrect-pin: "&cEl PIN insertado es incorrecto."
+    # Mensagem enviada quando o pin inserido é válido
+    valid-pin: "&aEl PIN que ha introducido es válido. Su contraseña se ha restablecido automáticamente a '%senha%'"
+    # Mensagem enviada quando um usuário não tem um pin
+    pin-dont-created: "&c%jogador% todavía no ha creado un pin."
+    # Mensagem enviada quando um pin é criado
+    pin-kick: "&aEl PIN de seguridad se creó correctamente.&r\n&r&r\n&r&aEste pin sólo se puede generar una vez, así que manténgalo muy bien.&r\n&r&aNunca divulgar su PIN a nadie.&r\n&r&r\n&r&aSu PIN es: &7%pin%"
+    # Mensagem de ajuda do comando pin
+    pin-help-message:
+      - ""
+      - "  &a/pin usar <pin> &7- Utiliza un pin de seguridad."
+      - "  &a/pin gerar &7- Genera un código PIN aleatorio."
+      - ""
+    # Mensagem de alerta para criar um pin
+    pin-warning-message:
+      - ""
+      - "  &aSistema de seguridad pin"
+      - "  &aUtilice el comando &f'/pin gerar' &aPara mejorar su seguridad."
+      - "  &aCon el PIN, puede recuperar su cuenta."
+      - ""
