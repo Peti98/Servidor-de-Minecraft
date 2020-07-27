@@ -1,0 +1,16 @@
+players:
+  f776ccda-b891-3286-8f8b-3a4146a953a1:
+    rank: Owner
+    name: DarkSpartan98
+    usertag: ''
+    playtime: 0
+    subranks: ''
+    permissions: []
+  e2ee7129-b31f-39aa-b33f-c07bf65d89c0:
+    usertag: ''
+    playtime: 520
+    permissions: []
+    subranks: ''
+    rank: Admin
+    name: Emmu961
+version: '1.2'
