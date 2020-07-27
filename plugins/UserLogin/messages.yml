@@ -1,0 +1,26 @@
+display-messages:
+  register-message: '&aWelcome, &b{player}&a! Type /register <password> <password>
+    to enter'
+  login-message: '&aWelcome back, &b{player}&a! Type /login <password> to enter'
+  login-successful: '&bLogged in!'
+  register-successful: '&bYou have been registered!'
+  time-out: '&fConnection timed out'
+  log-in-first: '&cLog in first to send chat messages!'
+command-errors:
+  incorrect-password: '&cIncorrect password!'
+  incorrect-usage: '&cIncorrect usage of the command'
+  player-only: '&fThis is a player-only command'
+  not-registered: '&cYou are not registered!'
+  already-registered: '&cYou are already registered!'
+  non-matching-passwords: '&cThe passwords do not match!'
+  no-permission: '&cYou don''t have permission for that!'
+  reload-failed: '&cFailed to reload configurations'
+  few-characters: '&cThe minimum amount of characters is {min}'
+  already-logged: '&cYou are already logged in!'
+  command-disabled: '&cLog in to use that command!'
+commands:
+  login-set: '&eLogin spawn set at x: &b{x}&e, y: &b{y}&e, z: &b{z}&e, y: &b{yaw}&e,
+    p: &b{pitch}&e, in world &b''{world}'''
+  lobby-set: '&eLobby spawn set at x: &b{x}&e, y: &b{y}&e, z: &b{z}&e, y: &b{yaw}&e,
+    p: &b{pitch}&e, in world &b''{world}'''
+  reload-successful: '&eReload successful!'

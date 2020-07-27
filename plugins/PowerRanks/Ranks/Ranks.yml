@@ -1,17 +1,17 @@
-Default: Member
+Default: Usuario
 Usertags: ''
 Groups:
-  Member:
+  Usuario:
     permissions: []
     inheritance: []
     build: true
     chat:
-      prefix: '[&aMember&r]'
+      prefix: '[&aUsuario&r]'
       suffix: ''
       chatColor: '&f'
       nameColor: '&f'
     level:
-      promote: ''
+      promote: 'Heroe'
       demote: ''
     economy:
       buyable: []
@@ -23,10 +23,10 @@ Groups:
     inheritance: []
     build: true
     chat:
-      prefix: '[&5Moderator&r]'
+      prefix: '[&f&lModerator&r]'
       suffix: ''
-      chatColor: '&f'
-      nameColor: '&f'
+      chatColor: '&e'
+      nameColor: '&9'
     level:
       promote: Admin
       demote: ''
@@ -40,9 +40,9 @@ Groups:
     inheritance: []
     build: true
     chat:
-      prefix: '[&4Admin&r]'
+      prefix: '&9[&4&lAdmin&r&9]'
       suffix: ''
-      chatColor: '&f'
+      chatColor: '&e'
       nameColor: '&8&l'
     level:
       promote: Owner
@@ -69,4 +69,106 @@ Groups:
       cost: 0
     gui:
       icon: diamond
+  Builder:
+    permissions: []
+    inheritance: []
+    build: true
+    chat:
+      prefix: '[&7Builder&r]'
+      suffix: ''
+      chatColor: '&f'
+      nameColor: '&a'
+    level:
+      promote: ''
+      demote: ''
+    economy:
+      buyable: []
+      cost: 0
+    gui:
+      icon: stone
+  Youtuber:
+    permissions: []
+    inheritance: []
+    build: true
+    chat:
+      prefix: '&0[&c&lYoutuber&r&0]'
+      suffix: ''
+      chatColor: '&f'
+      nameColor: '&f'
+    level:
+      promote: ''
+      demote: ''
+    economy:
+      buyable: []
+      cost: 0
+    gui:
+      icon: stone
+  Heroe:
+    permissions: []
+    inheritance: []
+    build: true
+    chat:
+      prefix: '&1[&9&lHeroe&r&1]'
+      suffix: ''
+      chatColor: '&f'
+      nameColor: '&a'
+    level:
+      promote: 'Angel'
+      demote: 'Usuario'
+    economy:
+      buyable: []
+      cost: 0
+    gui:
+      icon: stone
+  Angel:
+    permissions: []
+    inheritance: []
+    build: true
+    chat:
+      prefix: '&f[&d&lAngel&r&f]'
+      suffix: ''
+      chatColor: '&f'
+      nameColor: '&a'
+    level:
+      promote: 'Demonio'
+      demote: 'Heroe'
+    economy:
+      buyable: []
+      cost: 0
+    gui:
+      icon: stone
+  Dios:
+    permissions: []
+    inheritance: []
+    build: true
+    chat:
+      prefix: '&6[&f&lDios&r&6]'
+      suffix: ''
+      chatColor: '&f'
+      nameColor: '&a'
+    level:
+      promote: 'Admin'
+      demote: 'Demonio'
+    economy:
+      buyable: []
+      cost: 0
+    gui:
+      icon: stone
+  Demonio:
+    permissions: []
+    inheritance: []
+    build: true
+    chat:
+      prefix: '&0[&c&lDemonio&r&0]'
+      suffix: ''
+      chatColor: '&f'
+      nameColor: '&a'
+    level:
+      promote: 'Dios'
+      demote: 'Angel'
+    economy:
+      buyable: []
+      cost: 0
+    gui:
+      icon: stone
 version: '1.2'

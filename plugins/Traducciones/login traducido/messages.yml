@@ -1,0 +1,27 @@
+display-messages:
+  register-message: '&aBienvenido, &b{player}&a! Escribe /register <contraseña> <contraseña>
+    para registrarte'
+  login-message: '&aBienvenido de nuevo, &b{player}&a! Escribe /login <contraseña>
+    para entrar'
+  login-successful: '&bBienvenido de nuevo!'
+  register-successful: '&bTe has registrado correctamente!'
+  time-out: '&fHas tardado mucho tiempo en registrarte'
+  log-in-first: '&cTienes que registrarte primero!'
+command-errors:
+  incorrect-password: '&cContraseña incorrecta!'
+  incorrect-usage: '&cComando no valido'
+  player-only: '&fComando incorrecto'
+  not-registered: '&cNo estas registrado!'
+  already-registered: '&cYa estas registrado!'
+  non-matching-passwords: '&cLas contraseñas no coinciden!'
+  no-permission: '&cNo tienes permisos para hacer eso!'
+  reload-failed: '&cFallo cargando la configuracion'
+  few-characters: '&cEl minimo de caracteres es {min}'
+  already-logged: '&cYa estas conectado!'
+  command-disabled: '&cRegistrate para usar este comando!'
+commands:
+  login-set: '&eLogin spawn en x: &b{x}&e, y: &b{y}&e, z: &b{z}&e, y: &b{yaw}&e, p:
+    &b{pitch}&e, in world &b''{world}'''
+  lobby-set: '&eLobby spawn en x: &b{x}&e, y: &b{y}&e, z: &b{z}&e, y: &b{yaw}&e, p:
+    &b{pitch}&e, in world &b''{world}'''
+  reload-successful: '&eReload correcto!'
